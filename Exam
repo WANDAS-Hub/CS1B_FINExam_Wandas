@@ -1,0 +1,74 @@
+//1.
+palindrome.js
+// Prompt user for input (defaulting to example words)
+let word1 = prompt("Enter first word:", "RACECAR");
+let word2 = prompt("Enter second word:", "RECORDER");
+
+// Function to reverse a string
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
+// Reverse the words
+let reversed1 = reverseString(word1);
+let reversed2 = reverseString(word2);
+
+// Log original and reversed strings
+console.log("Word 1:", word1, "| Reversed:", reversed1);
+console.log("Word 2:", word2, "| Reversed:", reversed2);
+
+// Check if original is equal to reversed (palindrome check)
+console.log(`Is "${word1}" a palindrome?`, word1 === reversed1);
+console.log(`Is "${word2}" a palindrome?`, word2 === reversed2);
+
+
+
+//2.
+sortArray.js
+// Prompt for number array (entered as comma-separated values)
+let numbersInput = prompt("Enter numbers separated by commas:", "24, 65, 21, 5, 9, 32, 42, 80, 57");
+let namesInput = prompt("Enter names separated by commas:", "Zenvo, Erica, Jordie, Alicia, Redon");
+
+// Convert strings to arrays
+let numbers = numbersInput.split(',').map(Number);
+let names = namesInput.split(',').map(name => name.trim());
+
+// Merge arrays (for display only)
+let mergedArray = [...numbers, ...names];
+console.log("Merged Array:", mergedArray);
+
+// Sort numbers in descending order
+let sortedNumbers = [...numbers].sort((a, b) => b - a);
+console.log("Sorted Numbers (Descending):", sortedNumbers);
+
+// Sort names alphabetically
+let sortedNames = [...names].sort();
+console.log("Sorted Names (Alphabetically):", sortedNames);
+
+
+
+
+//3.
+mdArray.js
+// Prompt for names and ages
+let namesInput = prompt("Enter names separated by commas:", "Genevieve, Juan, Luna, Gabriel, Elise");
+let agesInput = prompt("Enter ages separated by commas:", "24, 65, 21, 5, 9");
+
+// Convert input to arrays
+let names = namesInput.split(',').map(name => name.trim());
+let ages = agesInput.split(',').map(age => parseInt(age));
+
+// Original multi-dimensional array
+let mdArray = [names, ages];
+
+// Restructure into [name, age] pairs
+let restructuredArray = [];
+for (let i = 0; i < names.length; i++) {
+    restructuredArray.push([names[i], ages[i]]);
+}
+
+// Log restructured array
+console.log("Restructured Multi-Dimensional Array:");
+restructuredArray.forEach(pair => {
+    console.log(pair);
+});
